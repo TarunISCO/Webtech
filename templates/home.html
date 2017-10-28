@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+{% block body %}
+  <div class="jumbotron text-center" style=" background-image: url('/static/fieldandcrop.jpg'); background-size: cover; padding-top: 340px;">
+  </div>
+    <h1 style="color: #337ab7; text-align: center; margin: 0px"> Improving agriculture, Improving lives.</h1>
+    <div class="jumbotron text-center">
+        <a href="/weather_report" class="btn btn-success btn-lg">Weather Report</a>
+        <a href="/warehouse_list" class="btn btn-success btn-lg">Warehouse List</a>
+        <a href="/policies" class="btn btn-success btn-lg">Government Policies</a>
+        <a href="/market" class="btn btn-success btn-lg">Market Trends</a>
+        <a href="/crop_details" class="btn btn-success btn-lg">Crop Details</a>
+
+    {% if session.logged_in == NULL %}
+        <h4>For more features Please</h4>
+        <a href="/register" class="btn btn-primary btn-lg">Register</a>
+        <a href="/login" class="btn btn-success btn-lg">Login</a>
+
+    {%  else %}
+        <hr>
+        <a href="/soilreport" class="btn btn-primary btn-lg">Soil Report Analysis</a>
+        <a href="/soilreport" class="btn btn-primary btn-lg">Best Crop For Me</a>
+    {% endif %}
+    </div>
+{% endblock %}
