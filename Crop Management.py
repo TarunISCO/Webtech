@@ -3,6 +3,8 @@ from flask_mysqldb import MySQL
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from passlib.hash import sha256_crypt
 from functools import wraps
+from flask.ext.googlemaps import GoogleMaps
+
 
 app = Flask(__name__)
 
@@ -15,6 +17,7 @@ app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 # init MYSQL
 mysql = MySQL(app)
 
+GoogleMaps(app)
 # Index
 @app.route('/')
 def index():
@@ -121,12 +124,22 @@ def logout():
     return redirect(url_for('index'))
 
 
+# Warehouse
+@app.route('/warehouse')
+def warehouse():
+
+    return render_template('warehouse.html')
+
 # Dashboard
 @app.route('/dashboard')
 @is_logged_in
 def dashboard():
 
     return render_template('dashboard.html')
+
+@app.route('/policies')
+def policies():
+    return render_template('policies.html')
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'
