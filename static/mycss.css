@@ -240,7 +240,7 @@ th {
         page-break-after: avoid
     }
     .navbar {
-        display: none
+        display: none;
     }
     .btn>.caret,
     .dropup>.btn>.caret {
@@ -6841,4 +6841,28 @@ button.close {
         display: none!important
     }
 }
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.4);
+}
+
+/* Add some padding inside the card container */
+.cardcontainer {
+    align-items: center;
+    padding: 2px 16px;
+}
+
+.container1 {
+    width: 100%;
+    padding: 5px 10px;
+    align-items: center;
+}
+
 /*# sourceMappingURL=bootstrap.min.css.map */

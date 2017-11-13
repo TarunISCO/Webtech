@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Mazor Crops in India are :</h1>
+
+
+    {% for crop in mazor_crops %}
+        <div class="jumbotron text-center text-justify">
+            <h3>{{ crop.name }}</h3>
+            {{ crop.description }} <br>
+            <strong>Type of Crop : </strong> {{ crop.type }} <br>
+            <strong>Varities : </strong> {{ crop.varities }} <br>
+            <strong>Temperature : </strong> {{ crop.temperature }} &degC <br>
+            <strong>Rainfall : </strong> {{ crop.rainfall }} cm <br>
+            <strong>Soil Type : </strong> {{ crop.soil_type }} <br>
+            <strong>Major Producers : </strong> {{ crop.mazor_producers }} <br>
+            <strong>Highest Producer : </strong> {{ crop.highest_producer }} <br>
+            <center>
+                <img src="{{url_for('static', filename= crop.image)}}" width="60%"/><br>
+                <small>Source : mapsofindia.com</small>
+            </center>
+        </div>
+    {% endfor %}
+
+
+
+
+{% endblock %}

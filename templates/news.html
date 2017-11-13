@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <center>
+    <h2>Latest News Headlines</h2>
+          {% for article in news %}
+              <div class="jumbotron text-center text-justify" style="width: 60%;">
+                <h4><b><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></b></h4>
+                  <h5 style="text-align:right"><b>{{ article.publishedAt }}</b></h5> <br>
+                {{ article.description }}
+              </div>
+            {% endfor %}
+
+    </center>
+{% endblock %}

@@ -4,11 +4,12 @@
   </div>
     <h1 style="color: #337ab7; text-align: center; margin: 0px"> Improving agriculture, Improving lives.</h1>
     <div class="jumbotron text-center">
-        <a href="/weather_report" class="btn btn-success btn-lg">Weather Report</a>
+
+        <a href="/weather" class="btn btn-success btn-lg">Weather Report</a>
         <a href="/warehouse" class="btn btn-success btn-lg">Warehouse List</a>
         <a href="/policies" class="btn btn-success btn-lg">Government Program and Schemes</a>
         <a href="/market" class="btn btn-success btn-lg">Market Trends</a>
-        <a href="/crop_details" class="btn btn-success btn-lg">Crop Details</a>
+        <a href="/mazor_crops" class="btn btn-success btn-lg">Major Crops in India</a>
 
     {% if session.logged_in == NULL %}
         <h4>For more features Please</h4>
@@ -19,6 +20,8 @@
         <hr>
         <a href="/soilreport" class="btn btn-primary btn-lg">Soil Report Analysis</a>
         <a href="/soilreport" class="btn btn-primary btn-lg">Best Crop For Me</a>
+        <a href="/laboratories" class="btn btn-primary btn-lg">Diagnostic Labs</a>
+        <a href="/testinglabs" class="btn btn-primary btn-lg">Soil Testing Labs</a>
     {% endif %}
     </div>
 {% endblock %}

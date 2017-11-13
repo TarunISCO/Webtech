@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{%  block body %}
+
+    <h2>Soil Testing Labs</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget aliquet metus.
+        Aenean fringilla, massa vel gravida consequat, est erat commodo erat, id aliquet velit metus a nisl.
+        Donec ante neque, pharetra eget auctor vitae, venenatis ac nulla. Ut ullamcorper, metus nec commodo
+        fermentum, nulla eros luctus elit, quis venenatis nulla orci nec lectus. Nulla purus velit,
+        fringilla id diam non, auctor rutrum leo. Suspendisse vehicula pharetra turpis et pellentesque.
+        Sed urna purus, porttitor et orci eu, malesuada porta purus. Mauris facilisis convallis risus.
+        Quisque varius feugiat enim. Duis consequat lectus sapien, et faucibus sem vulputate eget.
+        Pellentesque nec eleifend.</p>
+    <hr>
+    <span>Select a state to continue with</span>
+    <form method="post">
+    <select name="state" class="form-control">
+        {% for state in states %}
+        <option value="{{ state }}" SELECTED>{{ state }}</option>
+        {% endfor %}
+    </select>
+    <br>
+    <button type="submit">Go</button>
+    </form>
+
+{% endblock %}

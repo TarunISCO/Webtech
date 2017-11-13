@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% if 'No Labs found' in msg %}
+
+    {% else %}
+    <div class="jumbotron text-center" style=" background-image: url('/static/diaglabs.jpg'); background-size: cover;">
+    <h2 style="color: #c4e3f3; margin-top: 150px; margin-bottom: 150px">Diagnostic Laboratories in {{ state }}</h2>
+    </div>
+
+        <center>
+        {% for lab in labs %}
+
+        <div class="jumbotron" style="background-color: powderblue; width: 60%">
+            <h3><font style="; color: #337ab7"><b>{{ lab.ADDL }}</font></b> , {{ lab.District_Name }}</h3>
+            <font style="; color: #337ab7">Contact Person</font> : {{ lab.Person_Name }} <br>
+            <font style="; color: #337ab7">Address</font> : {{ lab.address }}<br>
+            <font style="; color: #337ab7">Mobile</font> : {{ lab.Mobile }} &emsp;
+            <font style="; color: #337ab7">Email</font> : {{ lab.email }} &emsp;
+            <font style="; color: #337ab7">Fax</font> : {{ lab.fax_no }}
+            </div>
+        {% endfor %}
+        </center>
+
+    {% endif %}
+
+{% endblock %}
